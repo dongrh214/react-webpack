@@ -3,7 +3,7 @@
  */
 
 var pkg = require('./package.json');
-var path = require('path')
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -37,7 +37,7 @@ module.exports = {
     ],
 
     plugins: [
-        // webpack 内置的 banner-plugin   ,这个插件的作用是给输出文件添加注释头
+        // webpack 内置的 banner-plugin ,这个插件的作用是给输出文件添加注释头
         new webpack.BannerPlugin("Copyright by dongruihe"),
 
         // html 模板插件
@@ -52,7 +52,7 @@ module.exports = {
             }
         }),
 
-        // 为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+        // 通过这个插件webpack可以分析和优先考虑使用最多的模块，并为组件分配ID分配最小的ID
         new webpack.optimize.OccurenceOrderPlugin(),
 
         new webpack.optimize.UglifyJsPlugin({
@@ -71,7 +71,7 @@ module.exports = {
             filename: '/js/[name].[chunkhash:8].js'
         }),
 
-        // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
+        // 可在业务 js 代码中使用 __DEV__替换）
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
         })

@@ -24,7 +24,8 @@ module.exports = {
     },
 
     postcss: [
-        require('autoprefixer') //调用autoprefixer插件，例如 display: flex
+        //调用autoprefixer插件
+        require('autoprefixer')
     ],
 
     plugins: [
