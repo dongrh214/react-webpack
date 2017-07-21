@@ -53,6 +53,6 @@ module.exports = {
         historyApiFallback: true, //不跳转，在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         inline: true, //实时刷新
         hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
-        port:9090
+        port:9090    //默认8080
     }
 };
